@@ -10,7 +10,10 @@ public class Kickable : MonoBehaviour
     // This method is called by Unity whenever the cat hits something
     //      whose collider's "Is Trigger" option is checked.
     private void OnTriggerEnter2D(Collider2D other)
+
     {
+     //   Debug.Log("triggered by " + other.gameObject.name + ", tag: " + other.gameObject.tag);
+
         if (other.gameObject.tag.Equals("LeftKick"))
         {
             _rigidbody.AddForce(new Vector2(-1, 1) * _inertia, ForceMode2D.Impulse);
